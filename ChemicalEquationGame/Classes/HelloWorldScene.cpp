@@ -35,7 +35,7 @@ bool HelloWorld::init()
     //    you may modify it.
 
     // add a "close" icon to exit the progress. it's an autorelease object
-    auto closeItem = MenuItemImage::create(
+    MenuItemImage* closeItem = MenuItemImage::create(
                                            "CloseNormal.png",
                                            "CloseSelected.png",
                                            CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
@@ -44,7 +44,7 @@ bool HelloWorld::init()
                                 origin.y + closeItem->getContentSize().height/2));
 
     // create menu, it's an autorelease object
-    auto menu = Menu::create(closeItem, NULL);
+    Menu* menu = Menu::create(closeItem, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
@@ -54,7 +54,7 @@ bool HelloWorld::init()
     // add a label shows "Hello World"
     // create and initialize a label
     
-    auto label = LabelTTF::create("Hello World", "Arial", 24);
+    LabelTTF* label = LabelTTF::create("欢迎来到化学方程俱乐部", "Arial", 24);
     
     // position the label on the center of the screen
     label->setPosition(Vec2(origin.x + visibleSize.width/2,
@@ -64,14 +64,46 @@ bool HelloWorld::init()
     this->addChild(label, 1);
 
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-    // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
+    m_SpriteBk = Sprite::create("Sta_Bk.png");
+    m_SpriteBk->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    this->addChild(m_SpriteBk, 0);
     
+    MenuItemImage* m_MenuStartGame = MenuItemImage::create(
+      "Sta_StartGame1.png",
+      "Sta_StartGame2.png",
+      CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+    m_MenuStartGame->setPosition(Vec2(120 ,240));
+    Menu* menuStart = Menu::create(m_MenuStartGame, NULL);
+    menuStart->setPosition(Vec2::ZERO);
+    this->addChild(menuStart, 1);
+
+    MenuItemImage* m_MenuSaveData = MenuItemImage::create(
+      "Sta_SaveData1.png",
+      "Sta_SaveData2.png",
+      CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+    m_MenuSaveData->setPosition(Vec2(300 ,250));
+    Menu* menuData = Menu::create(m_MenuSaveData, NULL);
+    menuData->setPosition(Vec2::ZERO);
+    this->addChild(menuData, 1);
+
+    MenuItemImage* m_MenuAchieve = MenuItemImage::create(
+      "Sta_Achieve1.png",
+      "Sta_Achieve2.png",
+      CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+    m_MenuAchieve->setPosition(Vec2(470 ,220));
+    Menu* menuAchieve = Menu::create(m_MenuAchieve, NULL);
+    menuAchieve->setPosition(Vec2::ZERO);
+    this->addChild(menuAchieve, 1);
+
+    MenuItemImage* m_MenuSetting = MenuItemImage::create(
+      "Sta_Setting1.png",
+      "Sta_Setting2.png",
+      CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+    m_MenuSetting->setPosition(Vec2(40 ,40));
+    Menu* menuSetting = Menu::create(m_MenuSetting, NULL);
+    menuSetting->setPosition(Vec2::ZERO);
+    this->addChild(menuSetting, 1);
+
     return true;
 }
 

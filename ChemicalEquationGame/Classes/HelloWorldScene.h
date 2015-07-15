@@ -16,6 +16,18 @@ public:
     void menuCloseCallback(cocos2d::Ref* pSender);
     
     // implement the "static create()" method manually
+
+//自定义
+private:
+  cocos2d::Sprite * m_SpriteBk;
+  cocos2d::MenuItemImage* m_MenuStartGame;          //开始游戏
+  cocos2d::MenuItemImage* m_MenuSaveData;           //数据统计
+  cocos2d::MenuItemImage* m_MenuAchieve;            //功成名就
+  cocos2d::MenuItemImage* m_MenuSetting;            //系统设置
+public:
+
+protected:
+
     CREATE_FUNC(HelloWorld);
 };
 
