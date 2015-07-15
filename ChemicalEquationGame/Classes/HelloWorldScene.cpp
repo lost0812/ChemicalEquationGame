@@ -71,7 +71,7 @@ bool HelloWorld::init()
     MenuItemImage* m_MenuStartGame = MenuItemImage::create(
       "Sta_StartGame1.png",
       "Sta_StartGame2.png",
-      CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+      CC_CALLBACK_1(HelloWorld::menuStartGameCallback, this));
     m_MenuStartGame->setPosition(Vec2(120 ,240));
     Menu* menuStart = Menu::create(m_MenuStartGame, NULL);
     menuStart->setPosition(Vec2::ZERO);
@@ -80,7 +80,7 @@ bool HelloWorld::init()
     MenuItemImage* m_MenuSaveData = MenuItemImage::create(
       "Sta_SaveData1.png",
       "Sta_SaveData2.png",
-      CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+      CC_CALLBACK_1(HelloWorld::menuSaveDataCallback, this));
     m_MenuSaveData->setPosition(Vec2(300 ,250));
     Menu* menuData = Menu::create(m_MenuSaveData, NULL);
     menuData->setPosition(Vec2::ZERO);
@@ -89,7 +89,7 @@ bool HelloWorld::init()
     MenuItemImage* m_MenuAchieve = MenuItemImage::create(
       "Sta_Achieve1.png",
       "Sta_Achieve2.png",
-      CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+      CC_CALLBACK_1(HelloWorld::menuAchieveCallback, this));
     m_MenuAchieve->setPosition(Vec2(470 ,220));
     Menu* menuAchieve = Menu::create(m_MenuAchieve, NULL);
     menuAchieve->setPosition(Vec2::ZERO);
@@ -98,7 +98,7 @@ bool HelloWorld::init()
     MenuItemImage* m_MenuSetting = MenuItemImage::create(
       "Sta_Setting1.png",
       "Sta_Setting2.png",
-      CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+      CC_CALLBACK_1(HelloWorld::menuSettingCallback, this));
     m_MenuSetting->setPosition(Vec2(40 ,40));
     Menu* menuSetting = Menu::create(m_MenuSetting, NULL);
     menuSetting->setPosition(Vec2::ZERO);
@@ -120,4 +120,24 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
+}
+
+void HelloWorld::menuStartGameCallback( cocos2d::Ref* pSender )
+{
+
+}
+
+void HelloWorld::menuSaveDataCallback( cocos2d::Ref* pSender )
+{
+
+}
+
+void HelloWorld::menuAchieveCallback( cocos2d::Ref* pSender )
+{
+
+}
+
+void HelloWorld::menuSettingCallback( cocos2d::Ref* pSender )
+{
+
 }

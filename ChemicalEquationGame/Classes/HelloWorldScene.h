@@ -16,6 +16,11 @@ public:
     void menuCloseCallback(cocos2d::Ref* pSender);
     
     // implement the "static create()" method manually
+public:
+  void menuStartGameCallback(cocos2d::Ref* pSender);
+  void menuSaveDataCallback(cocos2d::Ref* pSender);
+  void menuAchieveCallback(cocos2d::Ref* pSender);
+  void menuSettingCallback(cocos2d::Ref* pSender);
 
 //×Ô¶¨Òå
 private:
