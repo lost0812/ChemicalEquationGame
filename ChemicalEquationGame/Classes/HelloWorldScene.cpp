@@ -1,5 +1,5 @@
-#include "HelloWorldScene.h"
-//#include "GameLogic/GameSystem.h"
+#include "UI.h"
+#include "header.h"
 
 USING_NS_CC;
 
@@ -85,7 +85,7 @@ bool HelloWorld::init()
     m_MenuSaveData->setPosition(Vec2(300 ,250));
     Menu* menuData = Menu::create(m_MenuSaveData, NULL);
     menuData->setPosition(Vec2::ZERO);
-    this->addChild(menuData, 1);
+    this->addChild(menuData, 2);
 
     MenuItemImage* m_MenuAchieve = MenuItemImage::create(
       "Sta_Achieve1.png",
@@ -94,7 +94,7 @@ bool HelloWorld::init()
     m_MenuAchieve->setPosition(Vec2(470 ,220));
     Menu* menuAchieve = Menu::create(m_MenuAchieve, NULL);
     menuAchieve->setPosition(Vec2::ZERO);
-    this->addChild(menuAchieve, 1);
+    this->addChild(menuAchieve, 3);
 
     MenuItemImage* m_MenuSetting = MenuItemImage::create(
       "Sta_Setting1.png",
@@ -125,7 +125,12 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 
 void HelloWorld::menuStartGameCallback( cocos2d::Ref* pSender )
 {
-
+  CCTransitionScene * reScene = NULL;
+  CCScene * s = CChooseModel::createScene();
+  float t = 1.2f;
+  reScene = CCTransitionProgressOutIn::create(t, s);
+  CCDirector::sharedDirector()->replaceScene(reScene);
+  GameMgr->Setm_GameState(EGS_CHOOSE_MODEL);
 }
 
 void HelloWorld::menuSaveDataCallback( cocos2d::Ref* pSender )
