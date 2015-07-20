@@ -35,3 +35,5 @@ SingleTon<T>::SingleTon()
 {
 
 }
+#define AUTOGETSET(T, V) inline void Set##V(T set){V = set;} \
+	inline T Get##V(){return V;}
