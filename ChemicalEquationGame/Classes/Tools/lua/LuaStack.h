@@ -4,7 +4,7 @@
 struct lua_State;
 class CLuaStack : public SingleTon<CLuaStack>
 {
-private:
+public:
   lua_State* m_Lua;
 public:
   void InitLuaStack();

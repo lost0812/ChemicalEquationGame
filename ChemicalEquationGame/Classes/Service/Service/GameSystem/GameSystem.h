@@ -1,6 +1,6 @@
 #pragma once
 #include "GeneralKit.h"
-//#include "Level.h"
+#include "ChooseLevel/ChooseLevel.h"
 
 enum GameState
 {
@@ -12,9 +12,14 @@ class CGameSystem : public SingleTon<CGameSystem>
 {
 private:
   int m_GameState;                //ÓÎÏ·×´Ì¬
+private:
+  //GameSystem ¿ØÖÆÀà
+  CChooseLevel* ChooseLevel;
 public:
 	AUTOGETSET(int, m_GameState)
 public:
   CGameSystem();
+  void InitCtrClass();
+  bool LoadConfig();
   ~CGameSystem();
 };

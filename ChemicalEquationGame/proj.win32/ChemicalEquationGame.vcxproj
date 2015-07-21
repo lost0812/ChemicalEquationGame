@@ -170,6 +170,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Extends\Lua\src\lzio.c" />
     <ClCompile Include="..\Classes\Extends\Lua\src\print.c" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\Service\Service\GameSystem\ChooseLevel\ChooseLevel.cpp" />
     <ClCompile Include="..\Classes\Service\Service\GameSystem\GameSystem.cpp" />
     <ClCompile Include="..\Classes\Service\Service\GeneralKit\GeneralKit.cpp" />
     <ClCompile Include="..\Classes\Service\Struct\ParamStruct.cpp" />
@@ -204,7 +205,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Extends\Lua\include\lvm.h" />
     <ClInclude Include="..\Classes\Extends\Lua\include\lzio.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\Service\Service\GameSystem\ChooseLevel\ChooseLevel.h" />
     <ClInclude Include="..\Classes\Service\Service\GameSystem\GameSystem.h" />
+    <ClInclude Include="..\Classes\Service\Service\GeneralKit\define.h" />
     <ClInclude Include="..\Classes\Service\Service\GeneralKit\GeneralKit.h" />
     <ClInclude Include="..\Classes\Service\Struct\ParamStruct.h" />
     <ClInclude Include="..\Classes\Tools\log\Log.h" />
