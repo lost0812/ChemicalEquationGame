@@ -1,7 +1,6 @@
 #pragma once
 #include "GeneralKit.h"
 #include "define.h"
-#include "cocos2d.h"
 #include "iostream"
 #include "vector"
 

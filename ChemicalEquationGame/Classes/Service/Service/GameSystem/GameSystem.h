@@ -12,7 +12,7 @@ class CGameSystem : public SingleTon<CGameSystem>
 {
 private:
   int m_GameState;                //ÓÎÏ·×´Ì¬
-private:
+public:
   //GameSystem ¿ØÖÆÀà
   CChooseLevel* ChooseLevel;
 public:

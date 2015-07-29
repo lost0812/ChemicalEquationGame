@@ -57,12 +57,17 @@ bool CChooseModel::init()
   Menu* menuBack = Menu::create(m_MenuBack, NULL);
   menuBack->setPosition(Vec2::ZERO);
   this->addChild(menuBack, 4);
-
+  return true;
 }
 
 void CChooseModel::menuCheckPointCallback( cocos2d::Ref* pSender )
 {
-
+  CCTransitionScene * reScene = NULL;
+  CCScene * s = CLevelSecen::createScene();
+  float t = 1.2f;
+  reScene = CCTransitionProgressOutIn::create(t, s);
+  CCDirector::sharedDirector()->replaceScene(reScene);
+  GameMgr->Setm_GameState(EGS_CHOOSE_MODEL);
 }
 
 void CChooseModel::menuLearnCallback( cocos2d::Ref* pSender )
